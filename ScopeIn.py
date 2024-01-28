@@ -39,8 +39,8 @@ def onClick(mx, my, key, click):
     if ((str)(key) == "Button.left" or (str)(key) == "Button.right"):
         if (click == True):
             bullets.append((mx, my))
-            m.click()
-            m.move(0, -50)
+            #m.move(0, -50)
+            pass
 
 m = mouse.Controller()
 m1 = mouse.Listener(on_click = onClick)
@@ -71,14 +71,14 @@ def printImage():
         label = tkinter.Label(image = bulletDamage)
         label.image = bulletDamage
     s = c.create_image(
-        x,
-        y,
+        x + 3,
+        y + 3,
         image = sniper
     )
-    r = c.create_rectangle(0, 0, x - 200, height, fill = '#000000')
-    r1 = c.create_rectangle(x + 200, 0, width, height, fill = '#000000')
-    r2 = c.create_rectangle(x - 200, 0, x + 200, y - 200, fill = '#000000')
-    r3 = c.create_rectangle(x - 200, y + 200, x + 200, height, fill = '#000000')
+    r = c.create_rectangle(0, 0, x + 3 - 200, height, fill = '#000000')
+    r1 = c.create_rectangle(x + 3 + 200, 0, width, height, fill = '#000000')
+    r2 = c.create_rectangle(x + 3 - 200, 0, x + 3 + 200, y + 3 - 200, fill = '#000000')
+    r3 = c.create_rectangle(x + 3 - 200, y + 3 + 200, x + 3 + 200, height, fill = '#000000')
 
     s1 = c.create_image(
         width / 2,
