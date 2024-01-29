@@ -33,13 +33,17 @@ bulletDamage = Image.open('bulletDamage.png')
 bulletDamage = bulletDamage.resize((200, 200), False)
 bulletDamage = ImageTk.PhotoImage(bulletDamage)
 bullets = []
+bulletX = 0
+bulletY = 0
+shotTime = -10
 def onClick(mx, my, key, click):
-    global bulletDamage
+    global bulletDamage, shotTime, bulletX, bulletY
     print(mx, my, key, click, width, height)
     if ((str)(key) == "Button.left" or (str)(key) == "Button.right"):
         if (click == True):
-            bullets.append((mx, my))
-            #m.move(0, -50)
+            shotTime = time
+            bulletX = mx
+            bulletY = my
             pass
 
 m = mouse.Controller()
@@ -86,6 +90,10 @@ def printImage():
         image = sign
     )
     time += 1
+    if time == shotTime + 3:
+        m.release(mouse.Button.left)
+        m.move(0, -50)
+        bullets.append((bulletX, bulletY))
     if time == 1000:
         exit(0)
     window.after(10, printImage)

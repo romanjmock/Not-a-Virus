@@ -12,14 +12,14 @@ window.geometry((str)(width) + 'x' + (str)(height))
 window.geometry('+0+0')
 window.overrideredirect(True)
 window.attributes('-topmost', True)
-window.wm_attributes('-transparentcolor', '#000000')
+window.wm_attributes('-transparentcolor', '#000001')
 
 c = tkinter.Canvas(
     window,
     width = width,
     height = height,
     highlightthickness = 0,
-    bg = '#000000'
+    bg = '#000001'
 )
 c.place(
     x = 0,
@@ -36,7 +36,7 @@ def onClick(x, y, key, click):
     #print(f'clicked at {x}, {y}, {key}, {click}')
     gWidth = 400
     gHeight = 400
-    if click == True:
+    if click == True and time >= 300:
         angle1 = math.atan2((height - y) + gHeight, (x - width / 2) - gWidth)
         bullets.append(Bullet(width / 2, height - 100, angle1, 50))
 
@@ -125,162 +125,179 @@ bullet = bullet.resize((100, 100), False)
 explosionImage = Image.open('Explosion.png')
 explosionImage = explosionImage.resize((200, 200), False)
 explosionImage = ImageTk.PhotoImage(explosionImage)
+
+warning = Image.open('AlienWarning.png')
+#warning = warning.resize((200, 200), False)
+warning = ImageTk.PhotoImage(warning)
+signTime = 0
+
+#draw sign
 def run():
-    global x, y, width, height, g, time, g1, aliens, damage, currentSpeed, ship, bullet, explosionImage
+    global x, y, width, height, g, time, g1, aliens, damage, currentSpeed, ship, bullet, explosionImage, warning
 
     c.delete(tkinter.ALL)
-    #print(f'{x}, {y}')
-    gWidth = 400
-    gHeight = 400
-    angle = math.atan2((height - y) + gHeight, (x - width / 2) - gWidth)
-    #print(f'{height - y}, {x - width / 2}')
-    g1 = g.copy().rotate(math.degrees(angle))
-    #print(math.degrees(angle))
-    g1 = ImageTk.PhotoImage(g1)
-    #draw gun later
-    #print(math.degrees(angle))
-    #print(time)
-    if time % (int)(5 / currentSpeed) == 0:
-        x1 = (int)(random.random() * width)
-        aliens.append(Alien(x1, 0, 5 * currentSpeed))
-    if (time % 500) == 0:
-        currentSpeed += 1
-        #print('currentSpeed is now', currentSpeed)
-    # for x in range (10):
-    #     print('initial x', x)
-    #     image = c.create_image(
-    #         x * 30,
-    #         y,
-    #         image = ship
-    #     )
-    #     c.update()
-    #     sleep(.1)
-    #sleep(1)
-    for a in aliens:
-        if a.getY() > height - 50:
-            aliens.remove(a)
-            #print('alien hit target')
-            damage += 1
-        a.update()
-        # r = c.create_rectangle(
-        #     a.getX(),
-        #     a.getY(),
-        #     a.getX() + 100,
-        #     a.getY() + 100,
-        #     fill = '#123456'
-        # )
-        image = c.create_image(
-            a.getX(),
-            a.getY(),
-            image = ship
+    if (time < 300):
+        sign = c.create_image(
+            width / 2,
+            height / 2,
+            image = warning
         )
-        #c.update()
-        for b in bullets:
-            aX = a.getX()
-            aY = a.getY()
-            bX = b.getX()
-            bY = b.getY()
-            # x1 -= 50
-            # y1 -= 50
-            hitBox = 90
-            if bX > aX - hitBox and bX < aX + hitBox and bY > aY - hitBox and bY < aY + hitBox:
-                try:
-                    aliens.remove(a)
-                    bullets.remove(b)
-                    explosions.append(Explosion(aX, aY))
-                except ValueError:
-                    pass
-                    #print('error')
-                #print('shot')
-    bulletsCount = 0
-    for b in bullets:
-        if b.getX() > width or b.getX() < 0 or b.getY() > height or b.getY() < 0:
-            bullets.remove(b)
-        #print(f'{b.getX()}, {b.getY()}')
-        b.update()
-        currentBullet = ImageTk.PhotoImage(bullet.copy().rotate(math.degrees(b.getAngle())))
-
-        #save image object in label, otherwise it get's deleted
-        label = tkinter.Label(image = currentBullet)
-        label.image = currentBullet
-        
-        image = c.create_image(
-            b.getX(),
-            b.getY(),
-            image = currentBullet
-        )
-        #c.image = currentBullet
-        #images.append(image)
+        l = tkinter.Label(image = warning)
+        l.image = warning
+    else:
+        #print(f'{x}, {y}')
+        gWidth = 400
+        gHeight = 400
+        angle = math.atan2((height - y) + gHeight, (x - width / 2) - gWidth)
+        #print(f'{height - y}, {x - width / 2}')
+        g1 = g.copy().rotate(math.degrees(angle))
+        #print(math.degrees(angle))
+        g1 = ImageTk.PhotoImage(g1)
+        #draw gun later
+        #print(math.degrees(angle))
+        #print(time)
+        if time % (int)(30 / currentSpeed) == 0:
+            x1 = (int)(random.random() * width)
+            aliens.append(Alien(x1, 0, 5 * currentSpeed))
+        if (time % 500) == 0:
+            currentSpeed += 1
+            #print('currentSpeed is now', currentSpeed)
+        # for x in range (10):
+        #     print('initial x', x)
+        #     image = c.create_image(
+        #         x * 30,
+        #         y,
+        #         image = ship
+        #     )
+        #     c.update()
+        #     sleep(.1)
         #sleep(1)
-        bulletsCount += 1
-        #c.update()
-        #sleep(.1)
-    c.update()
-    #sleep(1)
-    for e in explosions:
-        e.update()
-        if (e.getAge() > 10):
-            explosions.remove(e)
-        else:
-            c.create_image(
-                e.getX(),
-                e.getY(),
-                image = explosionImage
+        for a in aliens:
+            if a.getY() > height - 50:
+                aliens.remove(a)
+                #print('alien hit target')
+                damage += 1
+            a.update()
+            # r = c.create_rectangle(
+            #     a.getX(),
+            #     a.getY(),
+            #     a.getX() + 100,
+            #     a.getY() + 100,
+            #     fill = '#123456'
+            # )
+            image = c.create_image(
+                a.getX(),
+                a.getY(),
+                image = ship
             )
-    #drawing gun
-    image = c.create_image(
-        width / 2,
-        height - 100,
-        image = g1
-    )
-    #draw bar
-    bar = c.create_rectangle(
-        width / 2 - 300,
-        10,
-        width / 2 + 300,
-        50,
-        fill = '#FF0000'
-    )
-    barFill = c.create_rectangle(
-        width / 2 - 300,
-        10,
-        width / 2 + 300 - 600 * (damage / 100),
-        50,
-        fill = '#00FF00'
-    )
-    #drawing glitches
-    for i in range (damage * 3):
-        xPos = (int)(random.random() * window.winfo_screenwidth())
-        yPos = (int)(random.random() * window.winfo_screenheight())
-        xLength = (int)(random.random() * 20)
-        #yLength = (int)(random.random() * 20)
-        yLength = 3
-        colorR = (int)(random.random() * 3)
-        red = '#FF0000'
-        green = '#00FF00'
-        blue = '#0000FF'
-        color = ''
-        if (colorR == 0):
-            color = red
-        if (colorR == 1):
-            color = green
-        if (colorR == 2):
-            color = blue
-        r = c.create_rectangle(
-            xPos,
-            yPos,
-            xPos + xLength,
-            yPos + yLength,
-            fill = color
+            #c.update()
+            for b in bullets:
+                aX = a.getX()
+                aY = a.getY()
+                bX = b.getX()
+                bY = b.getY()
+                # x1 -= 50
+                # y1 -= 50
+                hitBox = 90
+                if bX > aX - hitBox and bX < aX + hitBox and bY > aY - hitBox and bY < aY + hitBox:
+                    try:
+                        aliens.remove(a)
+                        bullets.remove(b)
+                        explosions.append(Explosion(aX, aY))
+                    except ValueError:
+                        pass
+                        #print('error')
+                    #print('shot')
+        #draw bullets
+        bulletsCount = 0
+        for b in bullets:
+            if b.getX() > width or b.getX() < 0 or b.getY() > height or b.getY() < 0:
+                bullets.remove(b)
+            #print(f'{b.getX()}, {b.getY()}')
+            b.update()
+            currentBullet = ImageTk.PhotoImage(bullet.copy().rotate(math.degrees(b.getAngle())))
+
+            #save image object in label, otherwise it get's deleted
+            label = tkinter.Label(image = currentBullet)
+            label.image = currentBullet
+            
+            image = c.create_image(
+                b.getX(),
+                b.getY(),
+                image = currentBullet
+            )
+            #c.image = currentBullet
+            #images.append(image)
+            #sleep(1)
+            bulletsCount += 1
+            #c.update()
+            #sleep(.1)
+        c.update()
+        #sleep(1)
+        #draw explosions
+        for e in explosions:
+            e.update()
+            if (e.getAge() > 10):
+                explosions.remove(e)
+            else:
+                c.create_image(
+                    e.getX(),
+                    e.getY(),
+                    image = explosionImage
+                )
+        #drawing gun
+        image = c.create_image(
+            width / 2,
+            height - 100,
+            image = g1
         )
+        #draw bar
+        bar = c.create_rectangle(
+            width / 2 - 300,
+            10,
+            width / 2 + 300,
+            50,
+            fill = '#FF0000'
+        )
+        barFill = c.create_rectangle(
+            width / 2 - 300,
+            10,
+            width / 2 + 300 - 600 * (damage / 100),
+            50,
+            fill = '#00FF00'
+        )
+        #drawing glitches
+        for i in range (damage * 3):
+            xPos = (int)(random.random() * window.winfo_screenwidth())
+            yPos = (int)(random.random() * window.winfo_screenheight())
+            xLength = (int)(random.random() * 20)
+            #yLength = (int)(random.random() * 20)
+            yLength = 3
+            colorR = (int)(random.random() * 3)
+            red = '#FF0000'
+            green = '#00FF00'
+            blue = '#0000FF'
+            color = ''
+            if (colorR == 0):
+                color = red
+            if (colorR == 1):
+                color = green
+            if (colorR == 2):
+                color = blue
+            r = c.create_rectangle(
+                xPos,
+                yPos,
+                xPos + xLength,
+                yPos + yLength,
+                fill = color
+            )
     c.update()
-    sleep(.01)
+    #sleep(.01)
     time += 1
     if damage < 100:
-        window.after(0, run)
+        window.after(10, run)
     else:
         exit(0)
 
 run()
-
 window.mainloop()

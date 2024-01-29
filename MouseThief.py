@@ -14,10 +14,10 @@ class MouseTheif:
             bg = '#add123'
         )
         self.caught = False
-        width = self.window.winfo_screenwidth()
-        height = self.window.winfo_screenheight()
-        print(f'{width}, {height}')
-        self.window.geometry((str)(width) + 'x' + (str)(height))
+        self.width = self.window.winfo_screenwidth()
+        self.height = self.window.winfo_screenheight()
+        print(f'{self.width}, {self.height}')
+        self.window.geometry((str)(self.width) + 'x' + (str)(self.height))
         #self.window.geometry((str)(width) + 'x' + (str)(height))
         self.window.geometry('+0+0')
         self.window.overrideredirect(True)
@@ -26,8 +26,8 @@ class MouseTheif:
 
         self.canvas = tkinter.Canvas(
             self.window,
-            width = width,
-            height = height,
+            width = self.width,
+            height = self.height,
             highlightthickness = 0,
             bg = '#add123'
         )
@@ -37,8 +37,7 @@ class MouseTheif:
         )
         file = Image.open('mouse.png')
         x, y = file.size
-        mL = ImageTk.PhotoImage(file)
-        mI = self.canvas.create_image(width / 2, 85, image = mL)
+        self.mL = ImageTk.PhotoImage(file)
 
         self.c = mouse.Controller()
 
@@ -51,11 +50,13 @@ class MouseTheif:
         file = file.resize((300, 300))
         self.file1 = ImageOps.mirror(ImageOps.flip(file))
         self.file = ImageOps.mirror(file)
-
+    def start(self):
         self.render()
         self.window.mainloop()
     def render(self):
+        self.canvas.delete(tkinter.ALL)
         x, y = self.c.position
+        mI = self.canvas.create_image(self.width / 2, 85, image = self.mL)
         angle = math.atan2(y - self.wY - 150, x - self.wX - 150)
         hit = False
         if self.wX + 150 < x + 10 and self.wX + 150 > x - 10 and self.wY + 150 < y + 10 and self.wY + 150 > y - 10:
@@ -90,21 +91,25 @@ class MouseTheif:
         img = ImageTk.PhotoImage(self.file1.rotate(180))
         i = self.canvas.create_image(self.wX + 150 - self.stealX, self.wY + 150, image = img)
         self.canvas.image = img
-        self.stealX += 5
+        self.stealX += 1
         self.time += 1
         if self.wX - self.stealX + 300 >= 0:
-            self.window.after(10, self.render1)
+            self.window.after(1, self.render1)
     def getCtrl(self):
         return self.c
 
 c = MouseTheif()
 
-def onMove(data, mx, my):
-    if (c.caught == True):
-        c.c.position = (c.wX - c.stealX + 378 * (300 / 512), c.wY + 312 * (300 / 512))
-    print('moving', mx, my)
+# def onMove(mx, my):
+#     #print('moving')
+#     if (c.caught == True):
+#         c.c.position = (c.wX - c.stealX + 378 * (300 / 512), c.wY + 312 * (300 / 512))
+#         print('escaping')
+#     #print('moving', mx, my)
 
-l = mouse.Listener(on_move = onMove)
-l.start()
+# l = mouse.Listener(on_move = onMove)
+# l.start()
+
+c.start()
 
 
