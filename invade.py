@@ -186,7 +186,7 @@ def run():
             if a.getY() > height - 50:
                 aliens.remove(a)
                 #print('alien hit target')
-                damage += 1
+                damage += 10
             a.update()
             # r = c.create_rectangle(
             #     a.getX(),
