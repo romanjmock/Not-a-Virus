@@ -86,7 +86,7 @@ def printImage():
 
     s1 = c.create_image(
         width / 2,
-        120,
+        160,
         image = sign
     )
     time += 1
@@ -94,9 +94,13 @@ def printImage():
         m.release(mouse.Button.left)
         m.move(0, -50)
         bullets.append((bulletX, bulletY))
-    if time == 1000:
-        exit(0)
-    window.after(10, printImage)
+    if time == 1500:
+        window.destroy()
+    else:
+        window.after(1, printImage)
+        #print(time)
 
 printImage()
 window.mainloop()
+
+print('done')

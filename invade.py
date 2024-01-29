@@ -4,6 +4,7 @@ from pynput import mouse
 from PIL import Image, ImageTk
 from time import sleep
 import random
+import base64
 
 window = tkinter.Tk()
 width = window.winfo_screenwidth()
@@ -127,13 +128,19 @@ explosionImage = explosionImage.resize((200, 200), False)
 explosionImage = ImageTk.PhotoImage(explosionImage)
 
 warning = Image.open('AlienWarning.png')
-#warning = warning.resize((200, 200), False)
+warning = warning.resize((200, 200), False)
 warning = ImageTk.PhotoImage(warning)
+
+bsod = Image.open('Bsod.jpg')
+bsod = bsod.resize((width + 10, height + 10), False)
+bsod = ImageTk.PhotoImage(bsod)
+
 signTime = 0
+bsodTime = 0
 
 #draw sign
 def run():
-    global x, y, width, height, g, time, g1, aliens, damage, currentSpeed, ship, bullet, explosionImage, warning
+    global x, y, width, height, g, time, g1, aliens, damage, currentSpeed, ship, bullet, explosionImage, warning, bsodTime
 
     c.delete(tkinter.ALL)
     if (time < 300):
@@ -144,7 +151,7 @@ def run():
         )
         l = tkinter.Label(image = warning)
         l.image = warning
-    else:
+    elif (damage < 100):
         #print(f'{x}, {y}')
         gWidth = 400
         gHeight = 400
@@ -156,7 +163,10 @@ def run():
         #draw gun later
         #print(math.degrees(angle))
         #print(time)
-        if time % (int)(30 / currentSpeed) == 0:
+        checkTime = (int)(30 / currentSpeed)
+        if checkTime == 0:
+            checkTime = 1
+        if time % checkTime == 0:
             x1 = (int)(random.random() * width)
             aliens.append(Alien(x1, 0, 5 * currentSpeed))
         if (time % 500) == 0:
@@ -289,15 +299,23 @@ def run():
                 yPos,
                 xPos + xLength,
                 yPos + yLength,
-                fill = color
+                fill = color,
+                outline = color
             )
+    elif damage <= 100:
+        i = c.create_image(
+            width / 2,
+            height / 2,
+            image = bsod
+        )
+        bsodTime += 1
+    if (bsodTime > 1000):
+        window.destroy()
     c.update()
     #sleep(.01)
     time += 1
-    if damage < 100:
-        window.after(10, run)
-    else:
-        exit(0)
+    window.after(10, run)
 
 run()
 window.mainloop()
+print('done')

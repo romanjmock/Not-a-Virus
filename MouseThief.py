@@ -11,7 +11,7 @@ class MouseTheif:
     def __init__(self):
         self.window = tkinter.Tk()
         self.window.config(
-            bg = '#add123'
+            bg = '#000001'
         )
         self.caught = False
         self.width = self.window.winfo_screenwidth()
@@ -21,7 +21,7 @@ class MouseTheif:
         #self.window.geometry((str)(width) + 'x' + (str)(height))
         self.window.geometry('+0+0')
         self.window.overrideredirect(True)
-        self.window.wm_attributes('-transparentcolor', '#add123')
+        self.window.wm_attributes('-transparentcolor', '#000001')
         self.window.wm_attributes('-topmost', True)
 
         self.canvas = tkinter.Canvas(
@@ -29,7 +29,7 @@ class MouseTheif:
             width = self.width,
             height = self.height,
             highlightthickness = 0,
-            bg = '#add123'
+            bg = '#000001'
         )
         self.canvas.place(
             x = 0,
@@ -38,6 +38,13 @@ class MouseTheif:
         file = Image.open('mouse.png')
         x, y = file.size
         self.mL = ImageTk.PhotoImage(file)
+        image = self.canvas.create_image(
+            0,
+            0,
+            image = self.mL
+        )
+        print('image is', self.mL)
+        print('image created')
 
         self.c = mouse.Controller()
 
@@ -50,6 +57,7 @@ class MouseTheif:
         file = file.resize((300, 300))
         self.file1 = ImageOps.mirror(ImageOps.flip(file))
         self.file = ImageOps.mirror(file)
+        print('started')
     def start(self):
         self.render()
         self.window.mainloop()
@@ -95,21 +103,13 @@ class MouseTheif:
         self.time += 1
         if self.wX - self.stealX + 300 >= 0:
             self.window.after(1, self.render1)
+        else:
+            print('finished')
+            self.window.destroy()
     def getCtrl(self):
         return self.c
 
 c = MouseTheif()
-
-# def onMove(mx, my):
-#     #print('moving')
-#     if (c.caught == True):
-#         c.c.position = (c.wX - c.stealX + 378 * (300 / 512), c.wY + 312 * (300 / 512))
-#         print('escaping')
-#     #print('moving', mx, my)
-
-# l = mouse.Listener(on_move = onMove)
-# l.start()
-
 c.start()
 
-
+print('done')
