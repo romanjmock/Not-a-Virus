@@ -11,7 +11,7 @@ height = window.winfo_screenheight()
 window.geometry((str)(width) + 'x' + (str)(height))
 window.geometry('+0+0')
 window.overrideredirect(True)
-window.wm_attributes('-topmost', True)
+window.attributes('-topmost', True)
 window.wm_attributes('-transparentcolor', '#000000')
 
 c = tkinter.Canvas(
@@ -110,22 +110,23 @@ images = []
 
 g1 = None
 time = 0
-glitchCount = 0
+damage = 0
+currentSpeed = 1
+ship = Image.open('Ship.png')
+ship = ship.resize((200, 100), False)
+ship = ImageTk.PhotoImage(ship)
+
+bullet = Image.open('Bullet.png')
+bullet = bullet.resize((100, 100), False)
+
+#label = tkinter.Label(image = ImageTk.PhotoImage(bullet))
+#label.image = ImageTk.PhotoImage(bullet)
+
+explosionImage = Image.open('Explosion.png')
+explosionImage = explosionImage.resize((200, 200), False)
+explosionImage = ImageTk.PhotoImage(explosionImage)
 def run():
-    global x, y, width, height, g, time, g1, aliens, glitchCount
-    ship = Image.open('Ship.png')
-    ship = ship.resize((200, 100), False)
-    ship = ImageTk.PhotoImage(ship)
-
-    bullet = Image.open('Bullet.png')
-    bullet = bullet.resize((100, 100), False)
-
-    #label = tkinter.Label(image = ImageTk.PhotoImage(bullet))
-    #label.image = ImageTk.PhotoImage(bullet)
-
-    explosionImage = Image.open('Explosion.png')
-    explosionImage = explosionImage.resize((200, 200), False)
-    explosionImage = ImageTk.PhotoImage(explosionImage)
+    global x, y, width, height, g, time, g1, aliens, damage, currentSpeed, ship, bullet, explosionImage
 
     c.delete(tkinter.ALL)
     #print(f'{x}, {y}')
@@ -137,12 +138,14 @@ def run():
     #print(math.degrees(angle))
     g1 = ImageTk.PhotoImage(g1)
     #draw gun later
-    print(math.degrees(angle))
-    print(time)
-    if time == 30:
-        time = 0
+    #print(math.degrees(angle))
+    #print(time)
+    if time % (int)(5 / currentSpeed) == 0:
         x1 = (int)(random.random() * width)
-        aliens.append(Alien(x1, 0, 5))
+        aliens.append(Alien(x1, 0, 5 * currentSpeed))
+    if (time % 500) == 0:
+        currentSpeed += 1
+        #print('currentSpeed is now', currentSpeed)
     # for x in range (10):
     #     print('initial x', x)
     #     image = c.create_image(
@@ -156,8 +159,8 @@ def run():
     for a in aliens:
         if a.getY() > height - 50:
             aliens.remove(a)
-            print('alien hit target')
-            glitchCount += 1
+            #print('alien hit target')
+            damage += 1
         a.update()
         # r = c.create_rectangle(
         #     a.getX(),
@@ -186,8 +189,9 @@ def run():
                     bullets.remove(b)
                     explosions.append(Explosion(aX, aY))
                 except ValueError:
-                    print('error')
-                print('shot')
+                    pass
+                    #print('error')
+                #print('shot')
     bulletsCount = 0
     for b in bullets:
         if b.getX() > width or b.getX() < 0 or b.getY() > height or b.getY() < 0:
@@ -211,8 +215,6 @@ def run():
         bulletsCount += 1
         #c.update()
         #sleep(.1)
-    for i in images:
-        print(i)
     c.update()
     #sleep(1)
     for e in explosions:
@@ -231,8 +233,23 @@ def run():
         height - 100,
         image = g1
     )
+    #draw bar
+    bar = c.create_rectangle(
+        width / 2 - 300,
+        10,
+        width / 2 + 300,
+        50,
+        fill = '#FF0000'
+    )
+    barFill = c.create_rectangle(
+        width / 2 - 300,
+        10,
+        width / 2 + 300 - 600 * (damage / 100),
+        50,
+        fill = '#00FF00'
+    )
     #drawing glitches
-    for i in range (glitchCount * 3):
+    for i in range (damage * 3):
         xPos = (int)(random.random() * window.winfo_screenwidth())
         yPos = (int)(random.random() * window.winfo_screenheight())
         xLength = (int)(random.random() * 20)
@@ -259,8 +276,10 @@ def run():
     c.update()
     sleep(.01)
     time += 1
-    window.after(0, run)
-    
+    if damage < 100:
+        window.after(0, run)
+    else:
+        exit(0)
 
 run()
 
