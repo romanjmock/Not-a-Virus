@@ -24,6 +24,8 @@ for p in programs:
 print('count is', len(runners))
 if (len(runners) > 2):
     continueRunning = False
+
+sleep(30)
 while continueRunning:
     count = sum(1 for proc in psutil.process_iter() if proc.name() == 'Runner.exe')
     print('count is currently', count)
@@ -49,6 +51,6 @@ while continueRunning:
             subprocess.call(scopeIn, creationflags = CREATE_NO_WINDOW)
         else:
             print('already running scopeIn')
-    sleep(.5)
+    sleep(100)
 
 print('done')
