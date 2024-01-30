@@ -46,11 +46,11 @@ m = mouse.Listener(on_move = onMove, on_click = onClick)
 m.start()
 
 
-g = Image.open('Turret.png')
+g = Image.open('Images/Turret.png')
 g = g.resize((300, 450), False)
 g = g.rotate(-90)
 
-alienShip = Image.open('Ship.png')
+alienShip = Image.open('Images/Ship.png')
 
 class Explosion:
     def __init__ (self, x, y):
@@ -113,25 +113,25 @@ g1 = None
 time = 0
 damage = 0
 currentSpeed = 1
-ship = Image.open('Ship.png')
+ship = Image.open('Images/Ship.png')
 ship = ship.resize((200, 100), False)
 ship = ImageTk.PhotoImage(ship)
 
-bullet = Image.open('Bullet.png')
+bullet = Image.open('Images/Bullet.png')
 bullet = bullet.resize((100, 100), False)
 
 #label = tkinter.Label(image = ImageTk.PhotoImage(bullet))
 #label.image = ImageTk.PhotoImage(bullet)
 
-explosionImage = Image.open('Explosion.png')
+explosionImage = Image.open('Images/Explosion.png')
 explosionImage = explosionImage.resize((200, 200), False)
 explosionImage = ImageTk.PhotoImage(explosionImage)
 
-warning = Image.open('AlienWarning.png')
+warning = Image.open('Images/AlienWarning.png')
 warning = warning.resize((200, 200), False)
 warning = ImageTk.PhotoImage(warning)
 
-bsod = Image.open('Bsod.jpg')
+bsod = Image.open('Images/Bsod.jpg')
 bsod = bsod.resize((width + 10, height + 10), False)
 bsod = ImageTk.PhotoImage(bsod)
 

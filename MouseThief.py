@@ -35,7 +35,7 @@ class MouseTheif:
             x = 0,
             y = 0
         )
-        file = Image.open('mouse.png')
+        file = Image.open('Images/mouse.png')
         x, y = file.size
         self.mL = ImageTk.PhotoImage(file)
         image = self.canvas.create_image(
@@ -53,7 +53,7 @@ class MouseTheif:
         self.stealX = 0
         self.time = 0
 
-        file = Image.open('Robber.png')
+        file = Image.open('Images/Robber.png')
         file = file.resize((300, 300))
         self.file1 = ImageOps.mirror(ImageOps.flip(file))
         self.file = ImageOps.mirror(file)

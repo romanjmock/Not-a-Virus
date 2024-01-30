@@ -29,7 +29,7 @@ c.place(
     x = 0,
     y = 0
 )
-bulletDamage = Image.open('bulletDamage.png')
+bulletDamage = Image.open('Images/bulletDamage.png')
 bulletDamage = bulletDamage.resize((200, 200), False)
 bulletDamage = ImageTk.PhotoImage(bulletDamage)
 bullets = []
@@ -50,11 +50,11 @@ m = mouse.Controller()
 m1 = mouse.Listener(on_click = onClick)
 m1.start()
 
-sniper = Image.open('Sniper.png')
+sniper = Image.open('Images/Sniper.png')
 sniper = sniper.resize((400, 400))
 sniper = ImageTk.PhotoImage(sniper)
 
-sign = Image.open('HuntingSeason.png')
+sign = Image.open('Images/HuntingSeason.png')
 sign = sign.crop((0, 70, 400, 330))
 sign = sign.resize((500, 300))
 sign = ImageTk.PhotoImage(sign)
