@@ -23,10 +23,10 @@ def removePath(path):
                 print(f, 'does not exist')
         os.rmdir(path)
 
-removePath(path)
+#removePath(path)
 
-porcelain.clone('https://github.com/romanjmock/Not-a-Virus', path)
+#porcelain.clone('https://github.com/romanjmock/Not-a-Virus', path)
 
-os.chdir(path)
+os.chdir(os.path.join(path, 'dist/Runner'))
 
-os.system('Dist/Runner/Runner.exe')
+os.system('Runner.exe')
