@@ -71,6 +71,12 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\DLLs\\_socket.pyd',
    'EXTENSION'),
+  ('charset_normalizer.md__mypyc',
+   'C:\\Users\\roman\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\charset_normalizer\\md__mypyc.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('charset_normalizer.md',
+   'C:\\Users\\roman\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\charset_normalizer\\md.cp310-win_amd64.pyd',
+   'EXTENSION'),
   ('_queue',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\DLLs\\_queue.pyd',
@@ -78,9 +84,6 @@
   ('_ssl',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\\DLLs\\_ssl.pyd',
-   'EXTENSION'),
-  ('charset_normalizer.md',
-   'C:\\Users\\roman\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python310\\site-packages\\charset_normalizer\\md.cp310-win_amd64.pyd',
    'EXTENSION'),
   ('libcrypto-1_1.dll',
    'C:\\Program '

