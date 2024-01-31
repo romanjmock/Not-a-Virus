@@ -4,7 +4,7 @@ import random
 import subprocess
 import psutil
 
-path = "C:\Program Files\Python312\Python.exe "
+path = "C:/users/%USERNAME%/AppData/Local/Programs/Python/Python312/python.exe "
 
 invade = path + 'C:/Users/Public/Kernal46/PythonBased/Invade.py'
 print('invade is now', invade)
@@ -29,6 +29,7 @@ while continueRunning:
     count = sum(1 for proc in psutil.process_iter() if proc.name() == 'Runner.exe')
     print('count is currently', count)
     r = (int)(random.random() * 3)
+    r = 0
     if (r == 0):
         count = sum(1 for proc in psutil.process_iter() if proc.name() == 'Invade.exe')
         if (count < 1):
