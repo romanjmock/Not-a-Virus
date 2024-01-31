@@ -14,7 +14,7 @@ print(invade)
 
 CREATE_NO_WINDOW = 0x08000000
 
-sleep(1)
+sleep(50)
 while True:
     r = (int)(random.random() * 3)
     r = 0
@@ -27,4 +27,4 @@ while True:
     if (r == 2):
         print('scopeIn')
         subprocess.call(scopeIn, creationflags = CREATE_NO_WINDOW)
-    sleep(1)
+    sleep(50)
