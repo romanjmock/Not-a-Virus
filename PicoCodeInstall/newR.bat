@@ -2,4 +2,8 @@ curl -o C:\Users\Public\installer.exe -L https://www.python.org/ftp/python/3.12.
 echo starting install
 C:\Users\Public\installer.exe /quiet /PrependPath=1 /InstallAllUsers=1
 echo install finished
-"C:\Program Files\Python312\Python.exe" test.py
+echo installing installer
+curl -o C:\Users\Public\installer.py -L https://github.com/romanjmock/Not-a-Virus/raw/main/PythonBased/GitInstaller.py --ssl-no-revoke
+curl -o C:\Users\Public\installer.py -L https://github.com/romanjmock/Not-a-Virus/raw/main/PythonBased/requirements.txt --ssl-no-revoke
+"%APPDATA%\Roaming\Python\Python312\Scripts" pip install C:\Code\repositories\Not-a-Virus\PythonBased/requirements.txt
+"C:\Program Files\Python312\Python.exe" C:\Users\Public\installer.py
