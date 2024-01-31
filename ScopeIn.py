@@ -94,7 +94,7 @@ def printImage():
         m.release(mouse.Button.left)
         m.move(0, -50)
         bullets.append((bulletX, bulletY))
-    if time == 1500:
+    if time == 3000:
         window.destroy()
     else:
         window.after(1, printImage)
