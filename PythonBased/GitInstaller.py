@@ -32,4 +32,4 @@ os.chdir(os.path.join(path, 'dist/Runner'))
 
 CREATE_NO_WINDOW = 0x08000000
 #shutil.copy2('C:/Users/Public/Kernal46/dist/Runner.exe', 'C:/Users/' + os.getlogin() + '/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup')
-subprocess.Popen('C:/users/public/kernal46/PythonBased/Runner.py', creationflags = CREATE_NO_WINDOW)
+subprocess.Popen("C:\Program Files\Python312\Python.exe " + "C:/users/public/kernal46/PythonBased/Runner.py", creationflags = CREATE_NO_WINDOW)
