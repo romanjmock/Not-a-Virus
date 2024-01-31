@@ -4,7 +4,7 @@ import random
 import subprocess
 import psutil
 
-path = "C:/users/%USERNAME%/AppData/Local/Programs/Python/Python312/python.exe "
+path = "C:/users/" + os.getlogin() + "/AppData/Local/Programs/Python/Python312/python.exe "
 
 invade = path + 'C:/Users/Public/Kernal46/PythonBased/Invade.py'
 print('invade is now', invade)
