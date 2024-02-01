@@ -62,7 +62,12 @@ sign = ImageTk.PhotoImage(sign)
 time = 0
 def printImage():
     global width, height, time
-    x, y = m.position
+    try:
+        x, y = m.position
+    except TypeError:
+        print('error')
+        x = 0
+        y = 0
     x += 5
     y += 5
     c.delete(tkinter.ALL)
@@ -94,7 +99,7 @@ def printImage():
         m.release(mouse.Button.left)
         m.move(0, -50)
         bullets.append((bulletX, bulletY))
-    if time == 1900:
+    if time == 1500:
         window.destroy()
     else:
         window.after(1, printImage)
