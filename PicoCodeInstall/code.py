@@ -40,51 +40,28 @@ keyboard.release(Keycode.ENTER)
 
 sleep(1)
 
-writeMessage('D:')
-sleep(.1)
-keyboard.press(Keycode.ENTER)
-keyboard.release(Keycode.ENTER)
-sleep(.1)
-#writeMessage('python3 testFile.py')
-writeMessage('start s')
-sleep(.1)
-keyboard.press(Keycode.ENTER)
-keyboard.release(Keycode.ENTER)
-
-sleep(1)
-
-keyboard.press(Keycode.TAB)
-keyboard.release(Keycode.TAB)
-keyboard.press(Keycode.TAB)
-keyboard.release(Keycode.TAB)
-keyboard.press(Keycode.ENTER)
-keyboard.release(Keycode.ENTER)
-
-#writeMessage('exit')
-sleep(.1)
-keyboard.press(Keycode.ENTER)
-keyboard.release(Keycode.ENTER)
-# sleep(.5)
-# 
-# writeMessage('exit')
+# writeMessage('D:')
+# sleep(.1)
 # keyboard.press(Keycode.ENTER)
 # keyboard.release(Keycode.ENTER)
-# 
-# #cmdccmdcmdcmccmdcmc
+# sleep(.1)
+# #writeMessage('python3 testFile.py')
+# #writeMessage('start /min r')
+writeMessage('D:/s.lnk')
+sleep(.1)
+keyboard.press(Keycode.ENTER)
+keyboard.release(Keycode.ENTER)
 
-# while currentTime < 5000:
-#     #keyboard.press(Keycode.K)
-#     #sleep(.15)
-#     #keyboard.release(Keycode.K)
-#     
-#     currentTime = (time.monotonic_ns() - startTime) / 1000000.0
-#     print(currentTime, startTime)
-#     sleep(.1)
+sleep(1.9)
 
-# while True:
-#     Check if button is pressed and if it is, to press the Macros and toggle LED
-#     if mute.value:  
-#         print(" mute button Pressed")
-#         keyboard.press(Keycode.F14)
-#     time.sleep(0.1)
-#
+keyboard.press(Keycode.TAB)
+keyboard.release(Keycode.TAB)
+keyboard.press(Keycode.TAB)
+keyboard.release(Keycode.TAB)
+keyboard.press(Keycode.ENTER)
+keyboard.release(Keycode.ENTER)
+
+writeMessage('exit')
+sleep(.1)
+keyboard.press(Keycode.ENTER)
+keyboard.release(Keycode.ENTER)

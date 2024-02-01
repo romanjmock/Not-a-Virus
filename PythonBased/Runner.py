@@ -14,10 +14,9 @@ print(invade)
 
 CREATE_NO_WINDOW = 0x08000000
 
-sleep(50)
+#sleep(50)
 while True:
     r = (int)(random.random() * 3)
-    r = 0
     if (r == 0):
         print('invade')
         subprocess.call(invade, creationflags = CREATE_NO_WINDOW)

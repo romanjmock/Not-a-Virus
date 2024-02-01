@@ -1,0 +1,1 @@
+wscript.exe D:/invisible.vbs D:/r.bat

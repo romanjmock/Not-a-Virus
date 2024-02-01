@@ -4,6 +4,8 @@ import shutil
 from time import sleep
 import subprocess
 
+subprocess.Popen('notepad.exe')
+
 path = 'C:/Users/Public/Kernal46'
 def removePath(path):
     if (os.path.exists(path)):
